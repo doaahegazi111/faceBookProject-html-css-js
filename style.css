@@ -1,0 +1,668 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,400;1,500&display=swap');
+:root{
+    --dark-color-lightness:17%;
+    --light-color-lightness:95%;
+    --white-color-lightness:100%;
+    --primary-Hue:252;
+    --color-white:hsl(252,30%,var(--white-color-lightness));
+    --color-light:hsl(252,30%,var(--light-color-lightness));
+    --color-gray:hsl(252,15%,65%);
+    --color-primary:hsl(var(--primary-Hue),75%,60%);
+    --color-secondary:hsl(252,100%,90%);
+    --color-success:hsl(120,95%,65%);
+    --color-danger:hsl(0,95%,65%);
+    --color-dark:hsl(252,30%,var(--dark-color-lightness));
+    --color-black:hsl(252,30%,10%);
+}
+*{
+    padding: 0; margin:0; box-sizing: border-box;scroll-behavior: smooth;list-style: none; text-decoration: none;outline: none;border:none ;
+}
+body{
+    font-family:'Poppins', sans-serif;
+    color: var(--color-black);
+    background-color: var(--color-light);
+}
+nav{
+    background-color: var(--color-white);
+    width: 100%;position: fixed;top: 0;z-index: 200 ;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px 150px;
+}
+nav .logo {
+    font-weight: bolder;
+    color: var(--color-primary);
+}
+nav .search{
+    background-color: var(--color-light);
+    padding: 10px 15px;
+    border-radius: 45px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.search input[type="search"]{
+    width:350px;
+    padding: 8px;
+    background-color: transparent;
+}
+.search i{
+    color: var(--color-dark);
+}
+nav .create{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+nav .create img , .left img{
+    border-radius: 50%;
+    width: 50px;
+}
+.create .btn{
+    background-color: var(--color-primary);
+    padding: 10px;
+    color: var(--color-white);
+    border-radius: 45px;
+    cursor: pointer;
+}
+main{
+    position: relative;
+    top: 5.4rem;
+}
+.left .account{
+    background-color: var(--color-white);
+    display: block;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 30px 20px;
+    color: var(--color-dark);
+}
+.small{
+    color: #ccc;
+}
+.content {
+    display: grid;
+    grid-template-columns: 30vh auto 20vw;
+    column-gap: 2rem; 
+    padding:10px 150px;
+}
+.content .icons{
+    background-color: var(--color-white);
+    margin-top: 20px;
+    border-radius: 30px 20px;
+    color: var(--color-dark);
+}
+.icons div{
+    position: relative;
+}
+.icons a{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    gap: 2rem;
+    padding: 15px 25px;
+    cursor: pointer;
+}
+.icons .active{
+    color: var(--color-primary);
+    background-color: var(--color-light);            
+}
+.icons .active::before{
+    content: "";
+    display: block;
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    background-color: var(--color-primary);
+}
+.test{
+    position: fixed;
+    width: 30vh;
+    z-index: 150;
+}
+.right , .middle{
+    z-index: 100;
+}
+.left a{
+    cursor: pointer;
+}
+.left .icons .btn:first-child.active{
+    border-top-left-radius:1rem;
+    overflow: hidden;
+}
+.left .icons .btn:last-child.active{
+    border-bottom-left-radius:1rem;
+    overflow: hidden;
+}
+.left .createPost{
+    text-align: center;
+    background-color: var(--color-primary);
+    margin-top: 20px;
+    color: var(--color-white);
+    border-radius: 30px 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+.icons .new{
+    background-color: red;
+    color: var(--color-white);
+    border-radius: 40%;
+    padding: 1px 2px;
+    position: absolute;
+    top:5px;
+    left: 35px;
+    font-weight: bold;
+}
+.icons .yourNot{
+    position: absolute;
+    background-color: var(--color-white);
+    left: 250px;
+    top: 36%;
+    padding:20PX 20px 10px 20px;
+    border-radius:8px;
+    z-index: 300;
+    width: 480px;
+    display: none;
+    transition: 0.3s;
+}
+.icons .yourNot.show{
+    display: block;
+}
+.icons .yourNot::before{
+    content: "";
+    border-color: transparent var(--color-white) transparent transparent;
+    border-style: solid;
+    border-width: 15px;
+    width: 0;
+    height: 0;
+    position: absolute;
+    background-color: transparent;
+    left: -28.5px;
+    top: 5px;
+}
+.icons .yourNot .Notif{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+.stories img{
+    width: 40px;
+    border-radius: 50%;
+    border: 3px solid var(--color-primary);
+}
+.stories .story:nth-child(1){
+    background: url(./images/story-1.jpg) no-repeat center ;
+}
+.stories .story:nth-child(2){
+    background: url(./images/story-2.jpg) no-repeat center ;
+}
+.stories .story:nth-child(3){
+    background: url(./images/story-3.jpg) no-repeat center ;
+}
+.stories .story:nth-child(4){
+    background: url(./images/story-4.jpg) no-repeat center ;
+}
+.stories .story:nth-child(5){
+    background: url(./images/story-5.jpg) no-repeat center ;
+}
+.stories .story:nth-child(6){
+    background: url(./images/story-6.jpg) no-repeat center ;
+}
+.stories{
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    height: 12rem;
+}
+.stories .story{
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-white);
+    font-size: 0.75rem;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+.stories .story::before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5rem;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(transparent , rgba(0,0,0,0.75));
+}
+.stories .story .name{
+    z-index: 2;
+    color: white;
+}
+.middle {
+    color: var(--color-dark);
+}
+.createPPost{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding: 3px 20px;
+    background-color: var(--color-white);
+    border-radius: 40px;
+}
+.createPPost img{
+    width: 40px;
+    border-radius: 50%;
+}
+.createPPost .img{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.createPPost .btn{
+    background-color: var(--color-primary);
+    padding:10px;
+    color: var(--color-white);
+    border-radius: 30px;
+    cursor: pointer;
+}
+.createPPost input[type="text"]{
+    color: var(--color-dark);
+    background-color: transparent;
+}
+.feeds{
+    margin-top: 20px;
+}
+.feeds .feed{
+    padding: 15px;
+    background-color: var(--color-white);
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+.feeds .head , .feeds .likedBy{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.feeds .likedBy{
+    margin-top: 10px;
+}
+.head .profilePhoto , .feed .caption{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.head .profilePhoto img , .right img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.body img{
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+i{
+    cursor: pointer;
+}
+.feeds .likedBy i , .right .messages .head i{
+    margin-right: 5px;
+    font-size: 20px;
+}
+.feed .people {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    position: relative;
+}
+.feed .people img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid var(--color-white);
+}
+.feed .people .img2{
+    position: absolute;
+    left: 13px;
+}
+.feed .people .img3{
+    position: absolute;
+    left: 30px;
+}
+.caption span{
+    display: block;
+}
+.right .messages{
+    background-color: var(--color-white);
+    padding: 15px 15px 10px;
+    border-radius: 15px;
+    color: var(--color-dark);
+}
+.right .messages .head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.right .messages .searchBar{
+    background-color: var(--color-light);
+    border-radius: 20px;
+    padding: 10px 20px ;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 10px 25px;
+}
+.messages input[type="search"]{
+    background-color: transparent;
+}
+.messages .category{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px 15px; 
+}
+.messages .category h6{
+    cursor: pointer;
+    width: 100%;
+    border-bottom: 4px solid var(--color-light);
+    text-align: center;
+    padding-bottom: 15px;
+}
+.messages .category .active{
+    border-bottom: 4px solid var(--color-dark);
+}
+.messages .message{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 0 10px 10px;
+    position: relative;
+}
+.messages .message .active::before{
+    content: '';
+    position: absolute;
+    background-color: var(--color-success);
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    bottom: 10px;
+    left: 30px;
+}
+.right .req{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.right .all{
+    background-color: var(--color-white);
+    border-radius: 15px;
+    padding: 20px ;
+    margin-bottom: 20px;
+    color: var(--color-dark);
+}
+.right .buttons{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.right .buttons div{
+    border-radius: 15px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.right .buttons .accept{
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+.right .buttons .decline{
+    background-color: var(--color-light);
+}
+.customizeTheme{
+    position:fixed;
+    top:-5000px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10000;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    display: grid;
+    place-items: center;
+    transition: 0.3s;
+}
+.close{
+    top:-5000px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    transition: 0.3s;
+}
+.openTheme{
+    z-index: 1000;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.customizeTheme .contain{
+    background-color: var(--color-white);
+    padding: 20px 20px 30px;
+    border-radius: 15px;
+    width: 50%;
+    box-shadow:0  0 1rem var(--color-primary);
+    position: relative;
+}
+.customizeTheme i{
+    position: absolute;
+    color: white;
+    border-radius: 50%;
+    right: -20px;
+    width: 50px;
+    height: 50px;
+    padding-top: 5px;
+    top:-15px;
+    font-size: 40px;
+    background-color: var(--color-primary);
+}
+.customizeTheme h5 , .customizeTheme .head h4{
+    color: var(--color-dark);
+}
+.customizeSize .font{
+    background-color: var(--color-light);
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+    color: var(--color-dark);
+}
+.customizeSize .choose{
+    display: flex;
+    background-color: var(--color-secondary);
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 5px 10px;
+    height: 5px;
+}
+.customizeSize .choose span{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-secondary);
+}
+.customizeSize .choose span.active{
+    background-color: var(--color-primary);
+}
+.customizeColor{
+    margin-bottom: 10px;
+}
+.customizeColor .color{
+    background-color: var(--color-light);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+}
+.customizeColor .choose{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 5px 10px;
+}
+.customizeColor .choose span{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+.customizeTheme .head{
+    margin:10px 20px 50px;
+}
+.customizeTheme .head h4{
+    margin-bottom: 10px;
+}
+.customizeColor .choose span:nth-child(1){
+    background-color: hsl(252, 75%, 60%);
+}
+.customizeColor .choose span:nth-child(2){
+    background-color: hsl(52, 75%, 60%);
+}
+.customizeColor .choose span:nth-child(3){
+    background-color: hsl(352, 75%, 60%);
+}
+.customizeColor .choose span:nth-child(4){
+    background-color: hsl(152, 75%, 60%);
+}
+.customizeColor .choose span:nth-child(5){
+    background-color: hsl(202, 75%, 60%);
+}
+.customizeColor .choose span.active{
+    border: 5px solid white;
+}
+.customizeSize{
+    margin: 10px 0;
+}
+.customizeSize h5 , .customizeColor h5 , .cutomizeBackground h5{
+    padding: 5px 0;
+}
+.cutomizeBackground .choose{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.cutomizeBackground .choose div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    margin-right: 20px;
+}
+.cutomizeBackground .choose .Light{
+    color: black;
+    background-color: white;
+}
+.cutomizeBackground .choose .Dark{
+    background-color: hsl(252, 30%, 17%);
+    color: white;
+}
+.cutomizeBackground .choose .LightsOut{
+    background-color: hsl(252, 30%, 10%);
+    color: white;
+}
+.cutomizeBackground .choose div span{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid var(--color-gray);
+}
+.cutomizeBackground .choose div.active{
+    border: 2px solid var(--color-primary);
+}
+.customizeTheme span{
+    cursor: pointer;
+}
+.pos{
+    position: fixed;
+    right: 150px;
+    bottom: 0px;
+    width: 20vw;
+}
+@media (max-width:1200px){
+    .container , .content{
+        padding:10px;
+    }
+    .pos{
+        right: 10px;
+        width: 30vw;
+    }
+    .content {
+        grid-template-columns: 70px auto 30vw;
+        gap: 0.5rem;
+    }
+    .test{
+        width: 70px;
+    }
+    .left .account , .left .createPost{
+        display: none;
+    }.icons .yourNot{
+        left: 85px;
+        top: 28%;
+    }.icons h4{
+        display: none;
+    }
+}
+@media (max-width:991px) {
+    nav .search{
+        display: none;
+    }
+    .right{
+        display: none;
+    }
+    .content {
+        grid-template-columns: 70px auto 0;
+        gap: 0;
+    }
+    .customizeTheme .contain{
+        width: 100%;
+    }
+}
+@media (max-width:576px){
+    .content {
+        grid-template-columns: 0 100% 0;
+        overflow: hidden;
+        font-size: medium;
+    }
+    .icons .yourNot{
+        width: 300px;
+        font-size: 13px;
+    } 
+    .customizeTheme .contain{
+        padding: 10px;
+    }
+    .cutomizeBackground .choose div{
+        width: 40%;
+        margin-right: 5px;
+    }
+}
